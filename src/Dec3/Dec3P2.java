@@ -1,9 +1,9 @@
 package Dec3;
 
-import java.util.*;
-import java.io.*;
+import java.io.File;
+import java.util.Scanner;
 
-public class Dec3P1 {
+public class Dec3P2 {
     public static void main(String[] args) {
 
         try {
@@ -12,14 +12,14 @@ public class Dec3P1 {
             int commonSum = 0;
 
             while(in.hasNextLine()) {
-                String sackContents = in.nextLine();
-                String sackComp1 = sackContents.substring(0, sackContents.length() / 2);
-                String sackComp2 = sackContents.substring(sackContents.length() / 2);
+                String sack1Contents = in.nextLine();
+                String sack2Contents = in.nextLine();
+                String sack3Contents = in.nextLine();
                 char match = '\0';
 
-                for(int i = 0; i < sackComp1.length(); i++) {
-                    if(sackComp2.contains(Character.toString(sackComp1.charAt(i)))) {
-                        match = sackComp1.charAt(i);
+                for(int i = 0; i < sack1Contents.length(); i++) {
+                    if(sack2Contents.contains(Character.toString(sack1Contents.charAt(i))) && sack3Contents.contains(Character.toString(sack1Contents.charAt(i)))) {
+                        match = sack1Contents.charAt(i);
                     }
                 }
 
